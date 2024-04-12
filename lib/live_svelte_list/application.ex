@@ -8,6 +8,7 @@ defmodule LiveSvelteList.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {NodeJS.Supervisor, [path: LiveSvelte.SSR.NodeJS.server_path(), pool_size: 4]},
       LiveSvelteListWeb.Telemetry,
       LiveSvelteList.Repo,
       {DNSCluster, query: Application.get_env(:live_svelte_list, :dns_cluster_query) || :ignore},
