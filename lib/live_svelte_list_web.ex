@@ -87,6 +87,8 @@ defmodule LiveSvelteListWeb do
       import LiveSvelteListWeb.CoreComponents
       import LiveSvelteListWeb.Gettext
 
+      import LiveSvelte
+
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
 
